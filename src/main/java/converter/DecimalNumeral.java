@@ -9,40 +9,41 @@ public class DecimalNumeral {
 	}
 
 	public String toRomanNumeral() {
-		
-String romanNumeral;
-		
+		String romanNumeral = "";
+
 		switch (this.decimalNumeral) {
-		
 		case 1:
 			romanNumeral = "I";
 			break;
 		case 5:
 			romanNumeral = "V";
 			break;
-		
+
 		case 10:
 			romanNumeral = "X";
 			break;
-			
+
 		case 50:
 			romanNumeral = "L";
 			break;
-		
+
 		case 100:
 			romanNumeral = "C";
-			break;	
-		
+			break;
+
 		case 500:
 			romanNumeral = "D";
 			break;
-			
-		case 1000:
-			romanNumeral = "M";
-			break;	
-			
+
 		default:
 			romanNumeral = "";
+		}
+
+		int numberOfThousands = this.decimalNumeral / 1000;
+		int restOfThousands = this.decimalNumeral % 1000;
+
+		for (int i = 0; i < numberOfThousands; i++) {
+			romanNumeral += "M";
 		}
 
 		return romanNumeral;
