@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import main.java.converter.Converter;
+import main.java.converter.DecimalNumeral;
 
-public class ConverterTest {
+public class DecimalNumeralTest {
 
 	@Test
 	public void shouldReturnIWhenOne(){
-		Converter decimalNumeral = new Converter(1);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("I", romanNumeral);
@@ -18,7 +18,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnVWhenFive(){
-		Converter decimalNumeral = new Converter(5);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(5);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("V", romanNumeral);
@@ -26,7 +26,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnXWhenTen(){
-		Converter decimalNumeral = new Converter(10);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(10);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("X", romanNumeral);
@@ -34,7 +34,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnLWhenFifty(){
-		Converter decimalNumeral = new Converter(50);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(50);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("L", romanNumeral);
@@ -42,7 +42,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnCWhenHundred(){
-		Converter decimalNumeral = new Converter(100);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(100);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("C", romanNumeral);
@@ -50,7 +50,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnDWhenFiveHundred(){
-		Converter decimalNumeral = new Converter(500);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(500);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("D", romanNumeral);
@@ -58,7 +58,7 @@ public class ConverterTest {
 	
 	@Test
 	public void shouldReturnMWhenThousand(){
-		Converter decimalNumeral = new Converter(1000);
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1000);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 		
 		assertEquals("M", romanNumeral);

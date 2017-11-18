@@ -1,10 +1,10 @@
 package main.java.converter;
 
-public class Converter {
+public class DecimalNumeral {
 
 	private int decimalNumeral;
 
-	public Converter(int decimalNumeral) {
+	public DecimalNumeral(int decimalNumeral) {
 		this.decimalNumeral = decimalNumeral;
 	}
 
