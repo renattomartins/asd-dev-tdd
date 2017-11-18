@@ -49,7 +49,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnDWhenFiveHundred() {
+	public void shouldReturnDWhen500() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(500);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -57,7 +57,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnMWhen1Thousand() {
+	public void shouldReturnMWhen1000() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(1000);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -65,7 +65,15 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnMWhen2Thousands() {
+	public void shouldReturnMDWhen1500() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1500);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MD", romanNumeral);
+	}
+
+	@Test
+	public void shouldReturnMMWhen2000() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(2000);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -73,7 +81,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnMWhen3Thousands() {
+	public void shouldReturnMMMWhen3000() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(3000);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 

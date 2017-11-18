@@ -31,10 +31,6 @@ public class DecimalNumeral {
 			romanNumeral = "C";
 			break;
 
-		case 500:
-			romanNumeral = "D";
-			break;
-
 		default:
 			romanNumeral = "";
 		}
@@ -44,6 +40,13 @@ public class DecimalNumeral {
 
 		for (int i = 0; i < numberOfThousands; i++) {
 			romanNumeral += "M";
+		}
+
+		int hasHalfThousand = restOfThousands / 500;
+		int restOfHalfThousand = restOfThousands % 500;
+
+		if (hasHalfThousand == 1) {
+			romanNumeral += "D";
 		}
 
 		return romanNumeral;
