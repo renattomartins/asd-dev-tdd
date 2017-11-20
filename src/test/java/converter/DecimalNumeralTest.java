@@ -9,7 +9,7 @@ import main.java.converter.DecimalNumeral;
 public class DecimalNumeralTest {
 
 	@Test
-	public void shouldReturnIWhenOne() {
+	public void shouldReturnIWhen1() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(1);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -17,7 +17,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnVWhenFive() {
+	public void shouldReturnVWhen5() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(5);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -25,7 +25,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnXWhenTen() {
+	public void shouldReturnXWhen10() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(10);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -33,7 +33,7 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnLWhenFifty() {
+	public void shouldReturnLWhen50() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(50);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
@@ -41,11 +41,27 @@ public class DecimalNumeralTest {
 	}
 
 	@Test
-	public void shouldReturnCWhenHundred() {
+	public void shouldReturnCWhen100() {
 		DecimalNumeral decimalNumeral = new DecimalNumeral(100);
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
 		assertEquals("C", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnCCWhen200() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(200);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("CC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnCCCWhen300() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(300);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("CCC", romanNumeral);
 	}
 
 	@Test
@@ -54,6 +70,30 @@ public class DecimalNumeralTest {
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
 		assertEquals("D", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnDCWhen600() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(600);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("DC", romanNumeral);
+	}
+
+	@Test
+	public void shouldReturnDCCWhen700() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(700);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("DCC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnDCCCWhen800() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(800);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("DCCC", romanNumeral);
 	}
 
 	@Test
@@ -86,5 +126,21 @@ public class DecimalNumeralTest {
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
 		assertEquals("MMM", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMMMDWhen3500() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(3500);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MMMD", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMMMDCWhen3600() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(3600);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MMMDC", romanNumeral);
 	}
 }
