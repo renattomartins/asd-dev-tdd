@@ -11,14 +11,6 @@ public class DecimalNumeral {
 	public String toRomanNumeral() {
 		String romanNumeral = "";
 
-		switch (this.decimalNumeral) {
-		case 1:
-			romanNumeral = "I";
-			break;
-
-		default:
-			romanNumeral = "";
-		}
 
 		int numberOfThousands = this.decimalNumeral / 1000;
 		int restOfThousands = this.decimalNumeral % 1000;
@@ -64,6 +56,26 @@ public class DecimalNumeral {
 		if (hasFive == 1) {
 			romanNumeral += "V";
 		}
+		
+		int hasUnit = restOfFive;
+
+		switch (hasUnit) {
+		case 1:
+			romanNumeral += "I";
+			break;
+		case 2:
+			romanNumeral += "II";
+			break;
+		case 3:
+			romanNumeral += "III";
+			break;
+		case 4:
+			romanNumeral += "IV";
+			break;
+		}
+
+		romanNumeral = romanNumeral.replaceAll("XXXXVIV", "XLIX");
+		romanNumeral = romanNumeral.replaceAll("VIV", "IX");
 
 
 		return romanNumeral;
