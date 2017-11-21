@@ -23,10 +23,6 @@ public class DecimalNumeral {
 			romanNumeral = "X";
 			break;
 
-		case 50:
-			romanNumeral = "L";
-			break;
-
 		default:
 			romanNumeral = "";
 		}
@@ -54,6 +50,13 @@ public class DecimalNumeral {
 		
 		romanNumeral = romanNumeral.replaceAll("DCCCC", "CM");
 		romanNumeral = romanNumeral.replaceAll("CCCC", "CD");
+		
+		int hasFifty = restOfHundreds / 50;
+		int restOfFifty = restOfHundreds % 50;
+
+		if (hasFifty == 1) {
+			romanNumeral += "L";
+		}
 
 		return romanNumeral;
 	}
