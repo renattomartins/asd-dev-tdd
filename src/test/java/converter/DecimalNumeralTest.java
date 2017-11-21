@@ -63,6 +63,15 @@ public class DecimalNumeralTest {
 
 		assertEquals("CCC", romanNumeral);
 	}
+	
+	@Test
+	public void shouldReturnCDWhen400() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(400);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("CD", romanNumeral);
+	}
+
 
 	@Test
 	public void shouldReturnDWhen500() {
@@ -95,6 +104,14 @@ public class DecimalNumeralTest {
 
 		assertEquals("DCCC", romanNumeral);
 	}
+	
+	@Test
+	public void shouldReturnCMWhen900() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(900);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("CM", romanNumeral);
+	}
 
 	@Test
 	public void shouldReturnMWhen1000() {
@@ -103,6 +120,38 @@ public class DecimalNumeralTest {
 
 		assertEquals("M", romanNumeral);
 	}
+	
+	@Test
+	public void shouldReturnMCWhen1100() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1100);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMCCWhen1200() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1200);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MCC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMCCCWhen1300() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1300);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MCCC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMCDWhen1400() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1400);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MCD", romanNumeral);
+	}
 
 	@Test
 	public void shouldReturnMDWhen1500() {
@@ -110,6 +159,38 @@ public class DecimalNumeralTest {
 		String romanNumeral = decimalNumeral.toRomanNumeral();
 
 		assertEquals("MD", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMDCWhen1600() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1600);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MDC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMDCCWhen1700() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1700);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MDCC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMDCCCWhen1800() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1800);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MDCCC", romanNumeral);
+	}
+	
+	@Test
+	public void shouldReturnMCMWhen1900() {
+		DecimalNumeral decimalNumeral = new DecimalNumeral(1900);
+		String romanNumeral = decimalNumeral.toRomanNumeral();
+
+		assertEquals("MCM", romanNumeral);
 	}
 
 	@Test

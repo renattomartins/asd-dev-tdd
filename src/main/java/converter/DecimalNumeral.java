@@ -51,6 +51,9 @@ public class DecimalNumeral {
 		for (int i = 0; i < numberOfHundreds; i++) {
 			romanNumeral += "C";
 		}
+		
+		romanNumeral = romanNumeral.replaceAll("DCCCC", "CM");
+		romanNumeral = romanNumeral.replaceAll("CCCC", "CD");
 
 		return romanNumeral;
 	}
