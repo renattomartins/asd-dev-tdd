@@ -19,10 +19,6 @@ public class DecimalNumeral {
 			romanNumeral = "V";
 			break;
 
-		case 10:
-			romanNumeral = "X";
-			break;
-
 		default:
 			romanNumeral = "";
 		}
@@ -56,6 +52,13 @@ public class DecimalNumeral {
 
 		if (hasFifty == 1) {
 			romanNumeral += "L";
+		}
+		
+		int numberOfDozens = restOfFifty / 10;
+		int restOfDozens = restOfFifty % 10;
+
+		for (int i = 0; i < numberOfDozens; i++) {
+			romanNumeral += "X";
 		}
 
 		return romanNumeral;
