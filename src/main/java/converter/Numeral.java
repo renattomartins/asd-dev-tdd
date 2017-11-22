@@ -17,28 +17,25 @@ public class Numeral {
 		for (int i = 0; i < numberOfThousands; i++) {
 			romanLiteral += "M";
 		}
+		
+		int numberOfHalfThousand = restOfThousands / 500;
+		int restOfHalfThousands = restOfThousands % 500;
 
-		int hasHalfThousand = restOfThousands / 500;
-		int restOfHalfThousand = restOfThousands % 500;
-
-		if (hasHalfThousand == 1) {
+		for (int i = 0; i < numberOfHalfThousand; i++) {
 			romanLiteral += "D";
 		}
 
-		int numberOfHundreds = restOfHalfThousand / 100;
-		int restOfHundreds = restOfHalfThousand % 100;
+		int numberOfHundreds = restOfHalfThousands / 100;
+		int restOfHundreds = restOfHalfThousands % 100;
 
 		for (int i = 0; i < numberOfHundreds; i++) {
 			romanLiteral += "C";
 		}
-
-		romanLiteral = romanLiteral.replaceAll("DCCCC", "CM");
-		romanLiteral = romanLiteral.replaceAll("CCCC", "CD");
-
-		int hasFifty = restOfHundreds / 50;
+			
+		int numberOfFifty = restOfHundreds / 50;
 		int restOfFifty = restOfHundreds % 50;
 
-		if (hasFifty == 1) {
+		for (int i = 0; i < numberOfFifty; i++) {
 			romanLiteral += "L";
 		}
 
@@ -73,6 +70,8 @@ public class Numeral {
 			break;
 		}
 
+		romanLiteral = romanLiteral.replaceAll("DCCCC", "CM");
+		romanLiteral = romanLiteral.replaceAll("CCCC", "CD");
 		romanLiteral = romanLiteral.replaceAll("XXXXVIV", "XLIX");
 		romanLiteral = romanLiteral.replaceAll("VIV", "IX");
 

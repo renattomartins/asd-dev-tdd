@@ -49,6 +49,11 @@ public class NumeralTest {
 	}
 	
 	@Test
+	public void shouldReturnCCLWhen250() {
+		assertEquals("CCL", Numeral.toRomanLiteral(250));
+	}
+	
+	@Test
 	public void shouldReturnCCCWhen300() {
 		assertEquals("CCC", Numeral.toRomanLiteral(300));
 	}
@@ -132,6 +137,11 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnMCMWhen1900() {
 		assertEquals("MCM", Numeral.toRomanLiteral(1900));
+	}
+	
+	@Test
+	public void shouldReturnMCMLWhen1950() {
+		assertEquals("MCML", Numeral.toRomanLiteral(1950));
 	}
 
 	@Test
