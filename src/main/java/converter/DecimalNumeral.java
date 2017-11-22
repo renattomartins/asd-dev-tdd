@@ -11,73 +11,72 @@ public class DecimalNumeral {
 	public String toRomanNumeral() {
 		String romanNumeral = "";
 
-		int arabic = this.decimalNumeral;
 
-		if (arabic < 4000) {
-			while (arabic >= 1000) {
-				romanNumeral += "M";
-				arabic -= 1000;
-			}
-			while (arabic >= 900) {
-				romanNumeral += "CM";
-				arabic -= 900;
-			}
+		int numberOfThousands = this.decimalNumeral / 1000;
+		int restOfThousands = this.decimalNumeral % 1000;
 
-			while (arabic >= 500) {
-				romanNumeral += "D";
-				arabic -= 500;
-			}
-
-			while (arabic >= 400) {
-				romanNumeral += "CD";
-				arabic -= 400;
-			}
-
-			while (arabic >= 100) {
-				romanNumeral += "C";
-				arabic -= 100;
-			}
-
-			while (arabic >= 90) {
-				romanNumeral += "XC";
-				arabic -= 90;
-			}
-
-			while (arabic >= 50) {
-				romanNumeral += "L";
-				arabic -= 50;
-			}
-
-			while (arabic >= 40) {
-				romanNumeral += "XL";
-				arabic -= 40;
-			}
-
-			while (arabic >= 10) {
-				romanNumeral += "X";
-				arabic -= 10;
-			}
-
-			while (arabic >= 9) {
-				romanNumeral += "IX";
-				arabic -= 9;
-			}
-
-			while (arabic >= 5) {
-				romanNumeral += "V";
-				arabic -= 5;
-			}
-
-			while (arabic >= 4) {
-				romanNumeral += "IV";
-				arabic -= 4;
-			}
-
-			while (arabic >= 1) {
-				romanNumeral += "I";
-				arabic -= 1;
-			}
+		for (int i = 0; i < numberOfThousands; i++) {
+			romanNumeral += "M";
 		}
+
+		int hasHalfThousand = restOfThousands / 500;
+		int restOfHalfThousand = restOfThousands % 500;
+
+		if (hasHalfThousand == 1) {
+			romanNumeral += "D";
+		}
+		
+		int numberOfHundreds = restOfHalfThousand / 100;
+		int restOfHundreds = restOfHalfThousand % 100;
+
+		for (int i = 0; i < numberOfHundreds; i++) {
+			romanNumeral += "C";
+		}
+		
+		romanNumeral = romanNumeral.replaceAll("DCCCC", "CM");
+		romanNumeral = romanNumeral.replaceAll("CCCC", "CD");
+		
+		int hasFifty = restOfHundreds / 50;
+		int restOfFifty = restOfHundreds % 50;
+
+		if (hasFifty == 1) {
+			romanNumeral += "L";
+		}
+		
+		int numberOfDozens = restOfFifty / 10;
+		int restOfDozens = restOfFifty % 10;
+
+		for (int i = 0; i < numberOfDozens; i++) {
+			romanNumeral += "X";
+		}
+		
+		int hasFive = restOfDozens / 5;
+		int restOfFive = restOfThousands % 5;
+
+		if (hasFive == 1) {
+			romanNumeral += "V";
+		}
+		
+		int hasUnit = restOfFive;
+
+		switch (hasUnit) {
+		case 1:
+			romanNumeral += "I";
+			break;
+		case 2:
+			romanNumeral += "II";
+			break;
+		case 3:
+			romanNumeral += "III";
+			break;
+		case 4:
+			romanNumeral += "IV";
+			break;
+		}
+
+		romanNumeral = romanNumeral.replaceAll("XXXXVIV", "XLIX");
+		romanNumeral = romanNumeral.replaceAll("VIV", "IX");
+
 
 		return romanNumeral;
 	}
