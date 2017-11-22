@@ -34,6 +34,12 @@ public class NumeralTest {
 	}
 	
 	@Test
+	public void shouldReturnXVWhen15() {
+		assertEquals("XV", Numeral.toRomanLiteral(15));
+	}
+	
+	
+	@Test
 	public void shouldReturnXXWhen20() {
 		assertEquals("XX", Numeral.toRomanLiteral(20));
 	}
@@ -41,6 +47,11 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnXWhen40() {
 		assertEquals("XL", Numeral.toRomanLiteral(40));
+	}
+	
+	@Test
+	public void shouldReturnXLVWhen45() {
+		assertEquals("XLV", Numeral.toRomanLiteral(45));
 	}
 	
 	@Test

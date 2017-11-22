@@ -45,11 +45,11 @@ public class Numeral {
 		for (int i = 0; i < numberOfDozens; i++) {
 			romanLiteral += "X";
 		}
+		
+		int numberOfFive = restOfDozens / 5;
+		int restOfFive = restOfDozens % 5;
 
-		int hasFive = restOfDozens / 5;
-		int restOfFive = restOfThousands % 5;
-
-		if (hasFive == 1) {
+		for (int i = 0; i < numberOfFive; i++) {
 			romanLiteral += "V";
 		}
 
