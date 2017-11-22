@@ -32,15 +32,40 @@ public class NumeralTest {
 	public void shouldReturnXWhen10() {
 		assertEquals("X", Numeral.toRomanLiteral(10));
 	}
-
+	
+	@Test
+	public void shouldReturnXXWhen20() {
+		assertEquals("XX", Numeral.toRomanLiteral(20));
+	}
+	
+	@Test
+	public void shouldReturnXWhen40() {
+		assertEquals("XL", Numeral.toRomanLiteral(40));
+	}
+	
 	@Test
 	public void shouldReturnLWhen50() {
 		assertEquals("L", Numeral.toRomanLiteral(50));
+	}
+	
+	@Test
+	public void shouldReturnXWhen80() {
+		assertEquals("LXXX", Numeral.toRomanLiteral(80));
+	}
+	
+	@Test
+	public void shouldReturnXWhen90() {
+		assertEquals("XC", Numeral.toRomanLiteral(90));
 	}
 
 	@Test
 	public void shouldReturnCWhen100() {
 		assertEquals("C", Numeral.toRomanLiteral(100));
+	}
+	
+	@Test
+	public void shouldReturnCXXWhen120() {
+		assertEquals("CXX", Numeral.toRomanLiteral(120));
 	}
 	
 	@Test
@@ -61,6 +86,11 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnCDWhen400() {
 		assertEquals("CD", Numeral.toRomanLiteral(400));
+	}
+	
+	@Test
+	public void shouldReturnCDXCWhen490() {
+		assertEquals("CDXC", Numeral.toRomanLiteral(490));
 	}
 
 
@@ -87,6 +117,11 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnCMWhen900() {
 		assertEquals("CM", Numeral.toRomanLiteral(900));
+	}
+	
+	@Test
+	public void shouldReturnCMXCWhen990() {
+		assertEquals("CMXC", Numeral.toRomanLiteral(990));
 	}
 
 	@Test
@@ -122,6 +157,11 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnMDCWhen1600() {
 		assertEquals("MDC", Numeral.toRomanLiteral(1600));
+	}
+	
+	@Test
+	public void shouldReturnCXXWhen1620() {
+		assertEquals("MDCXX", Numeral.toRomanLiteral(1620));
 	}
 	
 	@Test

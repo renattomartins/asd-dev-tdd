@@ -72,6 +72,9 @@ public class Numeral {
 
 		romanLiteral = romanLiteral.replaceAll("DCCCC", "CM");
 		romanLiteral = romanLiteral.replaceAll("CCCC", "CD");
+		romanLiteral = romanLiteral.replaceAll("LXXXX", "XC");
+		romanLiteral = romanLiteral.replaceAll("XXXX", "XL");
+		
 		romanLiteral = romanLiteral.replaceAll("XXXXVIV", "XLIX");
 		romanLiteral = romanLiteral.replaceAll("VIV", "IX");
 
