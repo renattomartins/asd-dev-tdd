@@ -52,31 +52,19 @@ public class Numeral {
 		for (int i = 0; i < numberOfFive; i++) {
 			romanLiteral += "V";
 		}
+		
+		int numberOfUnits = restOfFive;
 
-		int hasUnit = restOfFive;
-
-		switch (hasUnit) {
-		case 1:
+		for (int i = 0; i < numberOfUnits; i++) {
 			romanLiteral += "I";
-			break;
-		case 2:
-			romanLiteral += "II";
-			break;
-		case 3:
-			romanLiteral += "III";
-			break;
-		case 4:
-			romanLiteral += "IV";
-			break;
 		}
 
 		romanLiteral = romanLiteral.replaceAll("DCCCC", "CM");
-		romanLiteral = romanLiteral.replaceAll("CCCC", "CD");
+		romanLiteral = romanLiteral.replaceAll( "CCCC", "CD");
 		romanLiteral = romanLiteral.replaceAll("LXXXX", "XC");
-		romanLiteral = romanLiteral.replaceAll("XXXX", "XL");
-		
-		romanLiteral = romanLiteral.replaceAll("XXXXVIV", "XLIX");
-		romanLiteral = romanLiteral.replaceAll("VIV", "IX");
+		romanLiteral = romanLiteral.replaceAll( "XXXX", "XL");
+		romanLiteral = romanLiteral.replaceAll("VIIII", "IX");
+		romanLiteral = romanLiteral.replaceAll( "IIII", "IV");
 
 		return romanLiteral;
 	}

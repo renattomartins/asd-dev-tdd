@@ -22,10 +22,30 @@ public class NumeralTest {
 	public void shouldReturnIWhen1() {
 		assertEquals("I", Numeral.toRomanLiteral(1));
 	}
+	
+	@Test
+	public void shouldReturnIIWhen2() {
+		assertEquals("II", Numeral.toRomanLiteral(2));
+	}
+	
+	@Test
+	public void shouldReturnIVWhen4() {
+		assertEquals("IV", Numeral.toRomanLiteral(4));
+	}
 
 	@Test
 	public void shouldReturnVWhen5() {
 		assertEquals("V", Numeral.toRomanLiteral(5));
+	}
+	
+	@Test
+	public void shouldReturnVIIIWhen8() {
+		assertEquals("VIII", Numeral.toRomanLiteral(8));
+	}
+	
+	@Test
+	public void shouldReturnIXWhen9() {
+		assertEquals("IX", Numeral.toRomanLiteral(9));
 	}
 
 	@Test
@@ -213,5 +233,10 @@ public class NumeralTest {
 	@Test
 	public void shouldReturnMMMDCWhen3600() {
 		assertEquals("MMMDC", Numeral.toRomanLiteral(3600));
+	}
+	
+	@Test
+	public void shouldReturnMMMCMXCIXWhen3999() {
+		assertEquals("MMMCMXCIX", Numeral.toRomanLiteral(3999));
 	}
 }
